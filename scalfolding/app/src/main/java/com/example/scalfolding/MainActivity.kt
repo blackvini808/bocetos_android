@@ -1,11 +1,13 @@
 package com.example.scalfolding
 
+// import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -52,30 +54,32 @@ fun prevista(){
 }
 
 @Composable
-fun Aplicacion(modifier: Modifier){
-    fun al_pulsar_carrito(){
-        Log.v("Aplicacion", "Se ha pulsado el boton y utilizado la funcion al pulsar el carrito")
+fun Aplicacion(modifier: Modifier) {
+    fun al_pulsar_el_carrito(){
+        Log.v("Apliacion", "Se ha pulsado el boton y utilizado la funcion al pulsar el carrito")
     }
-    Scaffold( modifier = modifier,
+
+    Scaffold(modifier = modifier,
         topBar = {
-           BarraSuperior()
+            BarraSuperior()
         },
         bottomBar = {
             BarraInferior()
         },
         floatingActionButton = {
-            BotonFlotante(al_presionar = {
-                al_pulsar_carrito()
-                al_pulsar_carrito()
+            BotonFlotante(al_pusho_picar = {
+                al_pulsar_el_carrito()
+                al_pulsar_el_carrito()
             })
         })
-    { paddingInterior ->
-        Column(modifier = Modifier.fillMaxSize().padding(paddingInterior).background(Color.Cyan)){
-            Text("MENSAJE OLA K ACE",
+    { pading_interior ->
+        Column(modifier = Modifier.fillMaxSize().padding(pading_interior).background(Color.Cyan)) {
+            Text("Esto es un mensaje del otro mundo",
                 modifier = Modifier
-                .fillMaxHeight(0.1f)
-                .background(color = Color.Blue)
-                )
+                    .fillMaxHeight(0.1f)
+                    .background(color = Color.Blue)
+            )
+
             Greeting("Esto es la columna")
             Greeting("Esto es la columna")
             Greeting("Esto es la columna")
@@ -92,29 +96,33 @@ fun BarraSuperior(){
             titleContentColor = MaterialTheme.colorScheme.primary
         ),
         title = {
-        Text("TITULO DE LA BARRA", modifier = Modifier)
+            Text("Titulo de la barra", modifier = Modifier)
     })
 }
 
 @Composable
 fun BarraInferior(){
     fun boton_pulsado_inferior(){
-        Log.v("Barra Inferior", "Se ha pulsado el boton de la barra inferior")
+        Log.v("BarraInferior", "Se ha pulsado el boton de la barra inferior")
     }
-    BottomAppBar{
-        Row(verticalAlignment = Alignment.CenterVertically){
-            Text("TITULO DE LA BARRA")
+
+    BottomAppBar(
+        containerColor = MaterialTheme.colorScheme.surfaceContainer,
+        contentColor = MaterialTheme.colorScheme.primary
+    ) {
+        Row(verticalAlignment = Alignment.CenterVertically) {
+            Text("Aqui va una opcion")
             Spacer(modifier = Modifier.width(15.dp))
-            Icon(Icons.Rounded.ShoppingCart, contentDescription = " ")
-            BotonFlotante(al_presionar = {boton_pulsado_inferior()})
+            Icon(Icons.Rounded.ShoppingCart, contentDescription = "Boton de carrito de compras")
+            BotonFlotante(al_pusho_picar = { boton_pulsado_inferior() })
         }
     }
 }
 
 @Composable
-fun BotonFlotante(al_presionar: () -> Unit){
-    FloatingActionButton(onClick = {al_presionar}){
-        Icon(Icons.Rounded.ShoppingCart, contentDescription = " ")
+fun BotonFlotante(al_pusho_picar: () -> Unit){
+    FloatingActionButton(onClick = al_pusho_picar) {
+        Icon(Icons.Rounded.ShoppingCart, contentDescription = "")
     }
 }
 

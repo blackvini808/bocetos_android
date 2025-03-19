@@ -19,6 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "scalfolding"
+rootProject.name = "NavigationCompose"
 include(":app")
  

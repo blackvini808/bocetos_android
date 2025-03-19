@@ -19,6 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "scalfolding"
+rootProject.name = "mvvvm"
 include(":app")
  

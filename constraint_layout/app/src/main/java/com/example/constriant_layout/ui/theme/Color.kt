@@ -1,4 +1,4 @@
-package com.example.constraint_layout.ui.theme
+package com.example.constriant_layout.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

@@ -1,4 +1,4 @@
-package com.example.constraint_layout.ui.theme
+package com.example.daggerhilt.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle

@@ -1,8 +1,5 @@
 [versions]
 agp = "8.8.0"
-#Para integrar el Constraint Layout
-constraintlayoutCompose = "1.0.1"
-
 kotlin = "2.0.0"
 coreKtx = "1.15.0"
 junit = "4.13.2"
@@ -12,10 +9,11 @@ lifecycleRuntimeKtx = "2.8.7"
 activityCompose = "1.10.0"
 composeBom = "2024.04.01"
 
-[libraries]
-#PAra indicar de donde sale lal libreria de Constraint Layout
-androidx-constraintlayout-compose = { module = "androidx.constraintlayout:constraintlayout-compose", version.ref = "constraintlayoutCompose" }
+# Para cargar la inyeccion de dependencias
+ksp = "2.0.0-1.0.22"
+appcompat = "1.7.0"
 
+[libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
@@ -36,3 +34,5 @@ android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 
+#Para cargar KSP
+google-devtools-ksp = { id = "com.google.devtools.ksp", version.ref="ksp"}

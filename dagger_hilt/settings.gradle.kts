@@ -19,6 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "constriant_layout"
+rootProject.name = "DaggerHilt"
 include(":app")
  

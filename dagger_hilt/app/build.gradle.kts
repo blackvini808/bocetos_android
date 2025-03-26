@@ -2,14 +2,18 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+
+    // PAra KSP y Dagger
+    alias(libs.plugins.google.devtools.ksp)
+    id("com.google.dagger.hilt.android")
 }
 
 android {
-    namespace = "com.example.constriant_layout"
+    namespace = "com.example.daggerhilt"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.example.constriant_layout"
+        applicationId = "com.example.daggerhilt"
         minSdk = 24
         targetSdk = 35
         versionCode = 1
@@ -57,7 +61,9 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
-    //Para integrar mi Constraint Layout
-    implementation(libs.androidx.constraintlayout.compose)
-
+    //Dagger y configuracion del KSP
+    val hilt = "2.50"
+    implementation("com.google.dagger:hilt-android:$hilt")
+    ksp("com.google.dagger:hilt-compiler:$hilt")
+    implementation("androidx.hilt:hilt-navigation-compose:1.2.0")
 }

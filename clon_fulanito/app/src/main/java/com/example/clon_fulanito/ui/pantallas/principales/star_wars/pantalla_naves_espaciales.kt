@@ -24,7 +24,7 @@ fun PantallaNavesEspaciales(modifier: Modifier){
     val pagina_actual by vm_swapi.pagina_actual.observeAsState(null)
 
     LaunchedEffect(Unit) {
-        vm_swapi.descargar_pagina()
+        vm_swapi.descargar_pagina(3)
     }
 
     Column(modifier = modifier) {
@@ -45,13 +45,13 @@ fun PantallaNavesEspaciales(modifier: Modifier){
             Row {
                 Text("Pagina siguiente",
                     modifier = Modifier.clickable {
-                        Log.v("STARWARS", "Pagina siguiente de naves")
+                        vm_swapi.pasar_a_siguiente_pagina()
                     }
                 )
 
                 Text("Pagina anterior",
                     modifier = Modifier.clickable {
-                        Log.v("STARWARS", "Pagina anterios de naves")
+                        vm_swapi.pasar_a_anterior_pagina()
                     }
                 )
 

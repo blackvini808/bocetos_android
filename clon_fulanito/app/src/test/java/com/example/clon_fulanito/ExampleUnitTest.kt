@@ -1,4 +1,4 @@
-package com.example.clone_fulanito
+package com.example.clon_fulanito
 
 import org.junit.Test
 

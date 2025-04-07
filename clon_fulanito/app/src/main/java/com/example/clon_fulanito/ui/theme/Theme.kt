@@ -1,4 +1,4 @@
-package com.example.clone_fulanito.ui.theme
+package com.example.clon_fulanito.ui.theme
 
 import android.app.Activity
 import android.os.Build
@@ -34,7 +34,7 @@ private val LightColorScheme = lightColorScheme(
 )
 
 @Composable
-fun Clone_fulanitoTheme(
+fun Clon_fulanitoTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     // Dynamic color is available on Android 12+
     dynamicColor: Boolean = true,

@@ -1,4 +1,4 @@
-package com.example.clone_fulanito.ui.theme
+package com.example.clon_fulanito.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

@@ -2,14 +2,17 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+
+    // Plugins para utilziar el navigation compose en mi entorno
+    alias(libs.plugins.jetbrainsKotlinSerialization)
 }
 
 android {
-    namespace = "com.example.clone_fulanito"
+    namespace = "com.example.clon_fulanito"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.example.clone_fulanito"
+        applicationId = "com.example.clon_fulanito"
         minSdk = 24
         targetSdk = 35
         versionCode = 1
@@ -59,13 +62,17 @@ dependencies {
 
     //Librerias para Retrofit
     val version_retrofit = "2.9.0"
-    implementation("com.squareup.retrofit2:retrofit:${version_retrofit}") // Esta se va a encargar de hacer las peticiones HTTP
-    implementation("com.squareup.retrofit2:converter-gson:${version_retrofit}") // Esta se va a encargar de hacer las peticiones HTTP
+    implementation("com.squareup.retrofit2:retrofit:${version_retrofit}") // Este se va a encargar de hacer las peticiones HTTP
+    implementation("com.squareup.retrofit2:converter-gson:${version_retrofit}") // Este convierte de JSON a objetos de kotlin
 
     // Corutinas, libreria para usar programacion asincrona
     val version_corutinas = "1.5.1"
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:${version_corutinas}")
 
-    // Libreria para checar la informacion en tiempo real
+    // Libreria apra checar la informacion en tiempo real.
     implementation("androidx.compose.runtime:runtime-livedata:1.7.8")
+
+    // Navigation compose
+    implementation(libs.androidx.navigation.compose)
+    implementation(libs.kotlinx.serialization.json)
 }

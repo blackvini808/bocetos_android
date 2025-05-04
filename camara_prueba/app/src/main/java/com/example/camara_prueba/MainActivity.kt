@@ -82,3 +82,30 @@ fun GreetingPreview() {
         Greeting("Android")
     }
 }
+
+//  Actualizaciones en vista_de_camara.kt:
+// - Configuración de GPUImage y filtros: Se inicializa un objeto GPUImageView que
+//  permite aplicar filtros a la imagen de la cámara.
+//
+//  - Se añadió una lista de filtros (grayscale, saturación, brillo, etc.).
+//  Los filtros se aplican a la imagen de la cámara en tiempo real.
+//
+//  - Vista previa de la cámara: Se configura la vista previa para mostrar lo
+//  que captura la cámara. Utilizas GPUImageView para aplicar el filtro en tiempo
+//  real a la imagen de la cámara.
+//
+//  - Slider para aplicar los filtros: Se añadió un slider para controlar el filtro
+//  seleccionado por el usuario. El slider se ajusta al tamaño de la lista de filtros.
+//  El filtro activo se muestra en la vista previa de la cámara.
+//
+//  - Botón de "Tomar Foto": Se ha creado un botón cuadrado con bordes visibles
+//  y sin fondo para tomar la foto. El color del contorno es rojo.
+//
+//  - Funciones de cámara: Se inicializa la cámara utilizando CameraSelector y se
+//  vincula con el ciclo de vida.
+//
+//  - Función para guardar la foto: Se añadió la funcionalidad para guardar las
+//  fotos en el almacenamiento del dispositivo después de aplicar los filtros.
+//
+//  - Se añadió la función toBitmap() para convertir las imágenes
+//  capturadas por la cámara en un Bitmap que puede ser procesado por el filtro.

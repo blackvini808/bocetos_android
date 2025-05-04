@@ -136,9 +136,7 @@ fun PantallaCamara() {
                 ),
                 border = BorderStroke(5.dp, Color.Red), // Contorno blanco visible
                 modifier = Modifier.size(60.dp)
-            ){
-
-            }
+            ){}
         }
     }
 }

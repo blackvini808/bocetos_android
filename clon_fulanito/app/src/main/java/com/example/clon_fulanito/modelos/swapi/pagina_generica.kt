@@ -1,4 +1,5 @@
 package com.example.clon_fulanito.modelos.swapi
+
 import android.util.Log
 
 data class PaginaContenedora(
@@ -7,13 +8,12 @@ data class PaginaContenedora(
     val previous: String?,
     val results: List<NaveEspacial>
 ){
-    fun indicar_pagina_siguiente():Int?{
-        Log.v("MODELO PAGINA","Pagina extraida: ${extraer_pagina(next)}")
+    fun indicar_pagina_siguiente(): Int?{
+        Log.v("MODELO PAGINA", "Pagina extraida: ${extraer_pagina(next)}")
         return extraer_pagina(next)
     }
 
     fun indicar_pagina_anterior(): Int?{
-        Log.v("MODELO PAGINA","Pagina extraida: ${extraer_pagina(previous)}")
         return extraer_pagina(previous)
     }
 
@@ -22,7 +22,7 @@ data class PaginaContenedora(
             val resultado = pagina.split("?page=")
             return resultado[1].toInt()
         }
+
         return 0
     }
 }
-

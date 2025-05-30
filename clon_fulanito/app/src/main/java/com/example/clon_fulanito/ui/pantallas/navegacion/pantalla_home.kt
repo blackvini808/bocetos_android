@@ -26,6 +26,7 @@ import com.example.clon_fulanito.ui.pantallas.navegacion.controladores.BotonesIn
 import com.example.clon_fulanito.ui.pantallas.navegacion.controladores.PantallaMenuPrincipal
 import com.example.clon_fulanito.ui.pantallas.principales.star_wars.PantallaNavesEspaciales
 import com.example.clon_fulanito.vista_modelos.FulanitoViewModel
+import com.example.clon_fulanito.vista_modelos.SWAPIModelo
 
 
 @Composable
@@ -37,6 +38,7 @@ fun MenuPrincipal(modifier: Modifier){
     val control_navegacion = rememberNavController()
 
     val vm_fulanito = FulanitoViewModel()
+    val vm_swapi = SWAPIModelo()
 
     Scaffold(modifier = modifier, bottomBar = {
         NavigationBar {
@@ -75,7 +77,7 @@ fun MenuPrincipal(modifier: Modifier){
             }
 
             composable(PantallaMenuPrincipal.StarWars.ruta) {
-                PantallaNavesEspaciales(modifier)
+                PantallaNavesEspaciales(modifier, vm_swapi)
             }
 
             composable(PantallaMenuPrincipal.Perfil.ruta) {

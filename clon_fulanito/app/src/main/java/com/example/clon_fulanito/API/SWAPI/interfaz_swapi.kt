@@ -8,8 +8,7 @@ import retrofit2.http.Query
 
 interface SWAPIInterfaz{
 
-    // starships/?page=2
-    @GET("starships/") //Mas adelante hacemos las modificaiocnes necesarias
+    @GET("starships") //Mas delante hacemos las modificaiocnes necesarias
     suspend fun obtener_naves_espaciales(@Query("page") pagina: Int): PaginaContenedora
 
     @GET("starships/{id}")
